@@ -6,6 +6,7 @@
 
 :root{
     --fonte: 'Poppins', sans-serif;
+    --preto: #000;  
 }
 
 ul, ol, li{
