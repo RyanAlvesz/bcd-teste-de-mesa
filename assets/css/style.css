@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    --fonte: 'Poppins', sans-serif;
+}
+
 ul, ol, li{
     list-style: none;
 }
@@ -22,11 +26,13 @@ input, input:focus{
     border: none;
     outline: 0;
     background: transparent;
+    text-align: center;
 } 
 
 input::placeholder{
     color: inherit;
     font-family: inherit;
+    text-align: center;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -45,18 +51,40 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    font-family: var(--fonte);
 }
 
 main{
-    display: flex;
+    display: grid;
+    grid-template-areas:
+    "t1 t2"
+    "t3 t3";
     align-items: center;
     justify-content: center;
     gap: 12px;
 }
 
+main table:nth-child(1){
+    grid-area: t1;
+}
+
+main table:nth-child(2){
+    grid-area: t2;
+}
+
+main table:nth-child(3){
+    grid-area: t3;
+    width: 50%;
+    place-self: center center;
+}
+
 table, th, tr, td{
     border: 1px solid black;
     border-spacing: 0px;
+}
+
+th input, td input{
+    font-weight: 600;
 }
 
 td{
