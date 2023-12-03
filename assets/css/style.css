@@ -6,7 +6,12 @@
 
 :root{
     --fonte: 'Poppins', sans-serif;
-    --preto: #000;  
+    --preto: #000;
+    --verde-escuro: #192220;
+    --verde-base: #283532;
+    --verde-claro: #4b615b;
+    --cinza: #c6c6c6;
+    --creme: #faebd7;
 }
 
 ul, ol, li{
@@ -38,13 +43,6 @@ input::placeholder{
     text-align: center;
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
 *::-webkit-scrollbar{
     display: none;
 }
@@ -60,6 +58,7 @@ body{
     background-size: cover;
     position: relative;
     flex-direction: column;
+    backdrop-filter: brightness(110%);
 }
 
 body::after{
@@ -77,7 +76,7 @@ header, footer{
     align-items: center;
     justify-content: center;
     padding: 2.5vh;
-    color: #c6c6c6;
+    color: var(--cinza);
     position: relative;
     width: 100%;
 }
@@ -85,15 +84,13 @@ header, footer{
 header{
     font-size: 1.2rem;
     padding: 5vh;
+    text-shadow: 0px 0px 15px var(--verde-base);
 }
 
-main::after{
-    content: '';
-    display: block;
+.chuva{
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image: url(../img/rain.gif);
     filter: grayscale(1.5);
     background-size: auto;
     z-index: -1;
@@ -115,8 +112,8 @@ main{
 main table{
     position: relative;
     border-radius: 12px;
-    border: 2px solid #000;
-    background-color: #c6c6c6;
+    border: 2px solid var(--preto);
+    background-color: var(--cinza);
     height: fit-content;
     place-self: end start;
 }
@@ -141,7 +138,7 @@ main table:hover .botao{
 }
 
 table, th, tr, td{
-    border: 1px solid black;
+    border: 1px solid var(--preto);
     border-spacing: 0px;
 }
 
@@ -183,7 +180,7 @@ td input{
     left: calc(100% - 21px - 6px);
     top: calc(100% - 6px);
     transition: 50ms linear;
-    background-color: #faebd7;
+    background-color: var(--creme);
     padding: 0;
 }
 
@@ -222,7 +219,50 @@ td input{
 .botao td button img{
     width: 150%;
     height: 150%;
-    filter: drop-shadow(0 0 0.75rem #4b615b);
+    filter: drop-shadow(0 0 0.75rem var(--verde-claro));
+}
+
+.botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: absolute;
+    right: 32px;
+    bottom: 2.5vh;
+}
+
+.botoes button:not(button:last-child){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: var(--verde-base);
+    box-shadow: 0 0 10px var(--verde-escuro);
+    border-radius: 50%;
+    transition: ease-in-out; 
+}
+
+.botoes button{
+    transition: 1s;
+}
+
+.botoes button:hover{
+    transform: scale(1.02);
+}
+
+.botoes button:not(button:last-child):hover{
+    animation: girar 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.botoes button:not(button:last-child) img{
+    height: calc(5vh - 8px);
+    filter: 
+        drop-shadow(0 0 5px var(--verde-escuro));
+}
+
+.none{
+    display: none !important;
 }
 
 .reset{
@@ -230,26 +270,43 @@ td input{
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background-color: #283532;
+    background-color: var(--verde-base);
     padding: 12px 16px;
     border-radius: 12px;
-    position: absolute;
-    right: 32px;
-    bottom: 2.5vh;
-    box-shadow: 0 0 10px #192220;
-    text-shadow: -0.5px 0.5px 0.5px #283532;
+    box-shadow: 0 0 10px var(--verde-escuro);
+    text-shadow: -0.5px 0.5px 0.5px var(--verde-escuro);
 }
 
 .reset:hover img{
     animation: rodar 1.2s linear forwards;
 }
 
-@keyframes rodar {
-    100% { transform: rotate(280deg); }
-}
-
 .reset img{
     width: 24px;
     height: 24px;
     transition: 1s ease-in-out;
+    filter: 
+        drop-shadow(0 0 2.5px var(--verde-escuro));
+}
+
+@keyframes girar {
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(-30deg);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    75%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+@keyframes rodar {
+    100% { transform: rotate(80deg); }
 }

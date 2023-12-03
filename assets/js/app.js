@@ -1,10 +1,15 @@
 'use strict'
 
-let botaoAdicionarLinha = document.getElementsByClassName('adicionar-linha')
-let botaoRemoverLinha = document.getElementsByClassName('remover-linha')
-let botaoAdicionarColuna = document.getElementsByClassName('adicionar-coluna')
-let botaoRemoverColuna = document.getElementsByClassName('remover-coluna')
-let botaoReset = document.getElementById('reset')
+const botaoAdicionarLinha = document.getElementsByClassName('adicionar-linha')
+const botaoRemoverLinha = document.getElementsByClassName('remover-linha')
+const botaoAdicionarColuna = document.getElementsByClassName('adicionar-coluna')
+const botaoRemoverColuna = document.getElementsByClassName('remover-coluna')
+const botaoReset = document.getElementById('reset')
+const play = document.getElementById('pause')
+const pause = document.getElementById('play')
+const audio = document.getElementById('audio')
+const chuva = document.getElementById('chuva')
+const body = document.body
 
 
 for(let botao of botaoAdicionarLinha){
@@ -130,9 +135,41 @@ botaoReset.addEventListener('click', () => {
 
             }
 
+            for(let celulas of linha.children){
+                
+                let tipoCelula = celulas.children[0]
+
+                if(tipoCelula.tagName == 'INPUT'){
+                
+                    tipoCelula.value = ''  
+                
+                }
+            
+            }
+
         }
 
     }
+
+})
+
+play.addEventListener('click', () => {
+
+    audio.pause()
+    play.classList.add('none')
+    pause.classList.remove('none') 
+    chuva.style.backgroundImage = 'none'
+    body.style.backdropFilter = 'brightness(120%)'
+    
+})
+
+pause.addEventListener('click', () => {
+    
+    audio.play()
+    pause.classList.add('none')
+    play.classList.remove('none')
+    chuva.style.backgroundImage = 'url(./assets/img/rain.gif)'
+    body.style.backdropFilter = 'brightness(100%)'
 
 })
 

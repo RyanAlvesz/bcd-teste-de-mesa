@@ -204,16 +204,25 @@
                     </tr>
             </tbody>
         </table>
+        <div class="chuva" id="chuva"></div>
     </main>
     <footer>
         <span>
             Copyright 2023 | Ryan Alves
         </span>
-        <audio autoplay src="./assets/audio/rain.mp3"></audio>
-        <button class="reset" id="reset">
-            <span> Resetar </span>
-            <img src="./assets/img/reset.svg" alt="Resetar">
-        </button>
+        <div class="botoes">
+            <button id="pause" class="none">
+                <img src="./assets/img/sun.svg" alt="Sol">
+            </button>
+            <button id="play">
+                <img src="./assets/img/rain.svg" alt="Chuva">
+            </button>
+            <audio src="./assets/audio/rain.mp3" loop id="audio"></audio>
+            <button class="reset" id="reset">
+                <span> Resetar </span>
+                <img src="./assets/img/reset.svg" alt="Resetar">
+            </button>
+        </div>
     </footer>
 </body>
 </html>
