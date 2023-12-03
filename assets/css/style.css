@@ -55,6 +55,48 @@ body{
     justify-content: center;
     height: 100vh;
     font-family: var(--fonte);
+    background-image: url(../img/woods.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    flex-direction: column;
+}
+
+body::after{
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-color: rgba(40, 53, 50, 0.5);
+    z-index: -1;
+}
+
+header, footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5vh;
+    color: #c6c6c6;
+    position: relative;
+    width: 100%;
+}
+
+header{
+    font-size: 1.2rem;
+    padding: 5vh;
+}
+
+main::after{
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url(../img/rain.gif);
+    filter: grayscale(1.5);
+    background-size: auto;
+    z-index: -1;
 }
 
 main{
@@ -62,17 +104,26 @@ main{
     grid-template-areas:
     "t1 t2"
     "t3 t3";
-    align-items: center;
+    align-content: center;
     justify-content: center;
-    gap: 12px;
+    position: relative;
+    gap: 32px;
+    width: 100%;
+    height: 100%;
 }
-
+    
 main table{
     position: relative;
+    border-radius: 12px;
+    border: 2px solid #000;
+    background-color: #c6c6c6;
+    height: fit-content;
+    place-self: end start;
 }
 
 main table:nth-child(1){
     grid-area: t1;
+    place-self: end end;
 }
 
 main table:nth-child(2){
@@ -85,7 +136,7 @@ main table:nth-child(3){
     place-self: center center;
 }
 
-main table:nth-child(3):hover .botao{
+main table:hover .botao{
     opacity: 1;
 }
 
@@ -94,33 +145,111 @@ table, th, tr, td{
     border-spacing: 0px;
 }
 
-th input, td input{
+table tr:first-child th:first-child{
+    border-radius: 10px 10px 0 0;
+}
+
+table tr:nth-last-child(5) td:first-child{
+    border-radius: 0 0 0 10px;
+}
+
+table tr:nth-last-child(5) td:last-child{
+    border-radius: 0 0 10px 0;
+}
+
+th input, tr td input, tr td input::placeholder, span{
     font-weight: 600;
+    font-size: 1.1rem;
+}
+
+tr th{
+    padding: 8px;
 }
 
 td{
-    padding: 2px 6px;
+    padding: 4px 6px;
     text-align: center;
+    width: fit-content;
 }
 
-table:nth-child(3) .botao{
+td input{
+    width: 12vw;
+}
+
+.botao{
     opacity: 0;
     position: absolute;
-    border-radius: 50%;
-    background-color: #000;
-    left: 102%;
-    bottom: 0%;
+    border: none;
+    left: calc(100% - 21px - 6px);
+    top: calc(100% - 6px);
     transition: 50ms linear;
+    background-color: #faebd7;
+    padding: 0;
 }
 
-table:nth-child(3) .botao td{
-    display: flex;
-    width: 24px;
-    height: 24px;
+.remover{
+    left: calc(100% - 21px - 21px - 6px);
+}
+
+.coluna{
+    left: calc(100% - 6px);
+    bottom: calc(100% - 21px - 10%);
+    top: auto;
+}
+
+.remover.coluna{
+    bottom: calc(100% - 21px - 10% - 21px);
+}
+
+.botao td{
+    width: 14px;
+    height: 14px;
     padding: 0;
     border: none;
     display: flex;
     align-items: center; 
     justify-content: center;
-    color: white
+}
+
+.botao td button{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.botao td button img{
+    width: 150%;
+    height: 150%;
+    filter: drop-shadow(0 0 0.75rem #4b615b);
+}
+
+.reset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #283532;
+    padding: 12px 16px;
+    border-radius: 12px;
+    position: absolute;
+    right: 32px;
+    bottom: 2.5vh;
+    box-shadow: 0 0 10px #192220;
+    text-shadow: -0.5px 0.5px 0.5px #283532;
+}
+
+.reset:hover img{
+    animation: rodar 1.2s linear forwards;
+}
+
+@keyframes rodar {
+    100% { transform: rotate(280deg); }
+}
+
+.reset img{
+    width: 24px;
+    height: 24px;
+    transition: 1s ease-in-out;
 }

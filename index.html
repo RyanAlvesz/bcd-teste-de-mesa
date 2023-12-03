@@ -2,76 +2,153 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/app.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/favicon-gab.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/app.js" defer></script>
     <title> Teste de Mesa </title>
 </head>
 <body>
+    <header>
+       <h1>
+            Teste de Mesa
+       </h1>
+    </header>
     <main>
         <table>
-            <tr> <th colspan="3"> <input type="text" placeholder="TABELA_1"> </th> </tr>
-            <tr>
-                <td> <span> ID </span> </td>
-                <td> <input type="text" placeholder="NOME"> </td>
-                <td> <span> ID_TABELA_2 </span> </td>
-            </tr>
-            <tr>
-                <td> <span> 1 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td> <span> 2 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td> <span> 3 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td> <span> 4 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
+            <tbody class="tabela" id="t1">
+                <tr>
+                    <th colspan="3">
+                        <input type="text" placeholder="TABELA_1">
+                    </th>
+                </tr>
+                <tr>
+                    <td> <span> ID </span> </td>
+                    <td> <input type="text" placeholder="NOME"> </td>
+                    <td> <span> ID_TABELA_2 </span> </td>
+                </tr>
+                <tr>
+                    <td> <span> 1 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr>
+                    <td> <span> 2 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr>
+                    <td> <span> 3 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr>
+                    <td> <span> 4 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr class="botao adicionar coluna">
+                    <td colspan="1">
+                        <button class="adicionar-coluna 1">
+                            <img src="./assets/img/add.svg" alt="Mais">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="botao remover coluna">
+                    <td colspan="1">
+                        <button class="remover-coluna 1">
+                            <img src="./assets/img/remove.svg" alt="Menos">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="botao adicionar linha">
+                    <td colspan="1">
+                        <button class="adicionar-linha 1">
+                            <img src="./assets/img/add.svg" alt="Mais">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="botao remover linha">
+                    <td colspan="1">
+                        <button class="remover-linha 1">
+                            <img src="./assets/img/remove.svg" alt="Menos">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
         <table>
-            <tr> <th colspan="3"> <input type="text" placeholder="TABELA_2"> </th> </tr>
-            <tr>
-                <td> <span> ID </span> </td>
-                <td> <input type="text" placeholder="NOME"> </td>
-                <td> <span> ID_TABELA_1 </span> </td>
-            </tr>
-            <tr>
-                <td> <span> 1 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td> <span> 2 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td> <span> 3 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td> <span> 4 </span> </td>
-                <td> <input type="text"></td>
-                <td> <input type="text"></td>
-            </tr>
+            <tbody class="tabela" id="t2">
+                <tr>
+                    <th colspan="3">
+                        <input type="text" placeholder="TABELA_2">
+                    </th>
+                </tr>
+                <tr>
+                    <td> <span> ID </span> </td>
+                    <td> <input type="text" placeholder="NOME"> </td>
+                    <td> <span> ID_TABELA_1 </span> </td>
+                </tr>
+                <tr>
+                    <td> <span> 1 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr>
+                    <td> <span> 2 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr>
+                    <td> <span> 3 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr>
+                    <td> <span> 4 </span> </td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                </tr>
+                <tr class="botao adicionar coluna">
+                    <td colspan="1">
+                        <button class="adicionar-coluna 2">
+                            <img src="./assets/img/add.svg" alt="Mais">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="botao remover coluna">
+                    <td colspan="1">
+                        <button class="remover-coluna 2">
+                            <img src="./assets/img/remove.svg" alt="Menos">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="botao adicionar linha">
+                    <td colspan="1">
+                        <button class="adicionar-linha 2">
+                            <img src="./assets/img/add.svg" alt="Mais">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="botao remover linha">
+                    <td colspan="1">
+                        <button class="remover-linha 2">
+                            <img src="./assets/img/remove.svg" alt="Menos">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
         <table>
-            <tbody id="t3">
-                    <tr> <th colspan="3"> <input type="text" placeholder="TABELA_1_2"> </th> </tr>
+            <tbody class="tabela" id="t3">
+                    <tr>
+                        <th colspan="3">
+                            <input type="text" placeholder="TABELA_1_2">
+                        </th>
+                    </tr>
                     <tr>
                         <td> <span> ID </span> </td>
                         <td> <span> ID_TABELA_1 </span> </td>
@@ -97,9 +174,46 @@
                         <td> <input type="text"></td>
                         <td> <input type="text"></td>
                     </tr>
-                    <tr class="botao"> <td colspan="1"> <button id="adicionar-linha"> <span> + </span> </button> </td> </tr>
+                    <tr class="botao adicionar coluna">
+                        <td colspan="1">
+                            <button class="adicionar-coluna 3">
+                                <img src="./assets/img/add.svg" alt="Mais">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="botao remover coluna">
+                        <td colspan="1">
+                            <button class="remover-coluna 3">
+                                <img src="./assets/img/remove.svg" alt="Menos">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="botao adicionar linha">
+                        <td colspan="1">
+                            <button class="adicionar-linha 3">
+                                <img src="./assets/img/add.svg" alt="Mais">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="botao remover linha">
+                        <td colspan="1">
+                            <button class="remover-linha 3">
+                                <img src="./assets/img/remove.svg" alt="Menos">
+                            </button>
+                        </td>
+                    </tr>
             </tbody>
         </table>
     </main>
+    <footer>
+        <span>
+            Copyright 2023 | Ryan Alves
+        </span>
+        <audio autoplay src="./assets/audio/rain.mp3"></audio>
+        <button class="reset" id="reset">
+            <span> Resetar </span>
+            <img src="./assets/img/reset.svg" alt="Resetar">
+        </button>
+    </footer>
 </body>
 </html>
